@@ -4,9 +4,20 @@
     {{ .Site.Params.CustomFooterHTML | safeHTML }}
     {{ end }}
 
+    <span>
+        {{ if .Site.Params.imprint}}
+        <a href={{ .Site.Params.imprint }}>Imprint</a>
+        {{ end }}
+        •
+        {{ if .Site.Params.privacy_policy }}
+        <a href={{ .Site.Params.privacy_policy }}>Privacy Policy</a>
+        {{ end }}
+    </span>
+
     {{ if .Site.Params.footer }}
     <span>&copy; {{ now.Year }} {{ .Site.Params.Footer}}</span>
     {{ end }}
+    
     <span>
         Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
     </span>
